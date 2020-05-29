@@ -12,11 +12,16 @@
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
+<style>
+  html { visibility:hidden; }
+</style>
+
   <script>
       jQuery(document).ready(function ($) {
         var value = $.session.get("username");
         if(value=="admin"){
             $( "#login-check" ).replaceWith( "<a href='#' id='logout'  class='nav-link'> Logout</a>" );
+            document.getElementsByTagName("html")[0].style.visibility = "visible";
         }
         else{
             window.location.replace("./login.html");
@@ -32,7 +37,7 @@
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-<div class="navbar-collapse collapse" id="navbarCollapse" style="">
+<div class="navbar-collapse collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto px-3">
         <li class="nav-item active">
           <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
